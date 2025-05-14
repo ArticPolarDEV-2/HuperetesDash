@@ -1,0 +1,16 @@
+/* .card {
+    padding-bottom: 130% !important;
+} */
+
+.returnBtn i {
+    color: var(--main-text-color-golden);
+    margin-right: 10px;
+    font-size: 40px;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -1,0 +1,7 @@
+-- schemaChat.sql
+CREATE TABLE IF NOT EXISTS chat_messages (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    user_id INTEGER, 
+    message VARCHAR(2000), 
+    sent_in DATETIME DEFAULT CURRENT_TIMESTAMP
+);

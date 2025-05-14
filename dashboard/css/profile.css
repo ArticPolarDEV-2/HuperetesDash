@@ -1,0 +1,89 @@
+/* Estilos básicos para o perfil */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: #303030;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.card h3 {
+    color: var(--main-text-color);
+    margin-bottom: 20px;
+}
+
+.profile-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.profile-details {
+    color: var(--main-text-color);
+    font-size: 16px;
+}
+
+.profile-details p {
+    margin: 10px 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input {
+    padding: 10px;
+    background: #444;
+    border: 1px solid #555;
+    border-radius: 5px;
+    color: white;
+}
+
+form button {
+    padding: 10px;
+    background: #2ecc71;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: #27ae60;
+}
+
+form label {
+    color: var(--main-text-color);
+}
+
+.error {
+    background-color: #B22222; /* Vermelho escuro para melhor contraste */
+    border-radius: 10px;
+    border: 2px solid #8B0000; /* Vermelho mais forte na borda */
+    margin-bottom: 10px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 15px;
+}
+
+.error .errmsg {
+    color: #FFFFFF; /* Branco puro para maior contraste */
+    font-weight: bold;
+    font-size: 16px; /* Tamanho maior para melhor legibilidade */
+}

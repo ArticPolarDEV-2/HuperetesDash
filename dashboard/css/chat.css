@@ -1,0 +1,96 @@
+/* Estilo da div do chat */
+#chat {
+    width: 100%;
+    height: 300px; /* Altura fixa para o chat */
+    background-color: #2F2F2F; /* Fundo escuro (igual ao header e cards) */
+    border-radius: 10px; /* Cantos arredondados */
+    padding: 15px;
+    overflow-y: auto; /* Rolagem vertical */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin-bottom: 20px; /* Espaçamento abaixo do chat */
+    color: var(--main-text-color-golden); /* Cor do texto (bege claro) */
+}
+
+/* Estilo das mensagens no chat */
+#chat p {
+    margin: 0 0 10px 0;
+    padding: 10px;
+    background-color: #1C1C1C; /* Fundo escuro (igual ao sidebar) */
+    border-radius: 5px;
+    font-size: 14px;
+    color: var(--main-text-color-golden); /* Cor do texto (bege claro) */
+    max-width: 70%; /* Largura máxima das mensagens */
+    word-wrap: break-word; /* Quebra de linha para textos longos */
+}
+
+/* Estilo do input de mensagem */
+#mensagem {
+    width: calc(100% - 120px); /* Largura total menos o espaço do botão */
+    padding: 12px;
+    background-color: #1C1C1C; /* Fundo escuro (igual ao sidebar) */
+    border: 1px solid #C9A227; /* Borda dourada */
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--main-text-color-golden); /* Cor do texto (bege claro) */
+    outline: none; /* Remove o contorno ao focar */
+    transition: border-color 0.3s ease; /* Transição suave */
+}
+
+#mensagem:focus {
+    border-color: #F5E6C4; /* Cor da borda ao focar (bege claro) */
+    box-shadow: 0 0 5px rgba(245, 230, 196, 0.5); /* Sombra ao focar */
+}
+
+/* Estilo do botão de enviar */
+.send {
+    width: 100px;
+    padding: 12px;
+    background-color: #C9A227; /* Cor de fundo (dourado) */
+    color: #1C1C1C; /* Cor do texto (fundo escuro) */
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer; /* Cursor de ponteiro */
+    transition: background-color 0.3s ease; /* Transição suave */
+}
+
+.send:hover {
+    background-color: #F5E6C4; /* Cor de fundo ao passar o mouse (bege claro) */
+    color: #1C1C1C; /* Cor do texto ao passar o mouse */
+}
+
+.send:active {
+    background-color: #9f9677; /* Cor de fundo ao clicar (dourado mais escuro) */
+}
+
+.admin-message {
+    background-color: #ffcccc; /* Vermelho claro */
+    border-left: 5px solid red; /* Barra vermelha à esquerda */
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    color: red; /* Texto vermelho */
+}
+
+.user-message {
+    background-color: #f0f0f0; /* Cinza claro */
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    #chat {
+        height: 300px; /* Altura menor para telas pequenas */
+    }
+
+    #mensagem {
+        width: calc(100% - 100px); /* Ajuste de largura para telas pequenas */
+    }
+
+    .send {
+        width: 80px; /* Largura menor para telas pequenas */
+    }
+}

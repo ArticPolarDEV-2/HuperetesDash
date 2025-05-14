@@ -1,0 +1,181 @@
+/* Garante que o body ocupe toda a tela */
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-bg); /* Fundo escuro */
+    color: var(--main-text-color-golden); /* Texto bege claro */
+    font-family: Arial, sans-serif;
+}
+
+.title {
+    color: var(--main-text-color);
+    font-weight: 450;
+    font-style: normal;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+/* Centraliza o container do formulário */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Formulário com cor mais escura */
+form {
+    background: #2A2A2A; /* Cor próxima do #202020 */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #383838; /* Borda sutil para contraste */
+}
+
+/* Labels brancos para melhor leitura */
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+    color: var(--main-text-color-golden);
+}
+
+/* Inputs com fundo escuro e texto branco */
+form input[type="text"],
+form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 16px;
+    background: #3A3A3A;
+    color: white;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+
+/* Efeito quando o usuário clica no input */
+form input[type="text"]:focus,
+form input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Estiliza o botão */
+form input[type="submit"] {
+    background: #c28c57;
+    color: white;
+    font-size: 16px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Efeito ao passar o mouse no botão */
+form input[type="submit"]:hover {
+    background: #a5734a;
+}
+
+/* Mensagem de erro */
+.error {
+    background-color: #B22222; /* Vermelho escuro para melhor contraste */
+    border-radius: 10px;
+    border: 2px solid #8B0000; /* Vermelho mais forte na borda */
+    margin-bottom: 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 15px;
+}
+
+.error .errmsg {
+    color: #FFFFFF; /* Branco puro para maior contraste */
+    font-weight: bold;
+    font-size: 16px; /* Tamanho maior para melhor legibilidade */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .logo {
+        width: 120px;
+    }
+
+    form input[type="text"],
+    form input[type="password"],
+    form input[type="submit"] {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .error {
+        height: 40px;
+    }
+
+    .error .errmsg {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 20px;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    form input[type="text"],
+    form input[type="password"],
+    form input[type="submit"] {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .error {
+        height: 35px;
+    }
+
+    .error .errmsg {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,167 @@
+/* Estilizando formulários dentro do main */
+main form {
+    background: #2F2F2F;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 20px auto;
+    color: var(--main-text-color-golden);
+}
+
+main form input,
+main form button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+main form input {
+    border: 2px solid var(--login-form-border-color);
+    background: #1C1C1C;
+    color: var(--main-text-color-golden);
+    outline: none;
+    transition: border 0.3s ease-in-out;
+}
+
+main form input:focus {
+    border-color: var(--main-text-color);
+}
+
+main form button {
+    background: var(--main-text-color);
+    color: #1C1C1C;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+main form button:hover {
+    background: #F5E6C4;
+    color: #1C1C1C;
+}
+
+/* Estilizando a tabela */
+main table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #2F2F2F;
+    color: var(--main-text-color-golden);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+main table th, 
+main table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+main table th {
+    background: var(--main-text-color);
+    color: #1C1C1C;
+    font-weight: bold;
+}
+
+main table tr:hover {
+    background: rgba(201, 162, 39, 0.2);
+}
+
+/* Botões de ação */
+main table a {
+    display: inline-flex; /* Alinha ícone e texto lado a lado */
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+    color: var(--main-text-color-golden);
+}
+
+main table a:hover {
+    background: var(--main-text-color);
+    color: #1C1C1C;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.processbox {
+    position: relative;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 500px;
+    background-color: #2F2F2F;
+    border-left: 5px solid var(--main-text-color-golden);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    color: var(--main-text-color-golden);
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.processbox h4 {
+    margin: 0 0 5px 0;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--main-text-color-golden);
+}
+
+.processbox .close-btn {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    color: var(--main-text-color-golden);
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    transition: color 0.3s;
+}
+
+.processbox .close-btn:hover {
+    color: #fff;
+}
+/* Responsividade */
+@media (max-width: 768px) {
+    .table-responsive {
+        border-radius: 10px;
+    }
+
+    main table {
+        min-width: 600px; /* Define largura mínima para a tabela rolar */
+    }
+
+    main table th, 
+    main table td {
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    main {
+        padding-top: 100px;
+    }
+
+    .processbox {
+        margin: 15px;
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+
+    .processbox h4 {
+        font-size: 16px;
+    }
+}
