@@ -3,3 +3,6 @@ uploads/
 docs/
 databases/.env
 vendor/
+
+**/.DS_Store
+.env
