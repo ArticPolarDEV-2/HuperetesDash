@@ -10,7 +10,7 @@ if (!isset($_SESSION["adm_id"])) {
     exit;
 }
 
-$_SESSION["adm"] = true;
+// $_SESSION["adm"] = true;
 // $_SESSION["user_id"]            = $_SESSION["adm_id"];
 // $_SESSION["user_name"]          = $_SESSION["adm_name"];
 // $_SESSION["user_email"]         = $_SESSION["adm_email"];

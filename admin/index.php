@@ -6,9 +6,16 @@
 
 // Debug Code
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL); 
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL); 
+
+$DocFolder = $_SERVER['DOCUMENT_ROOT'];
+if (!file_exists($DocFolder . "/databases/mainDbConn.php")) {
+    ob_clean();
+    echo json_encode(['status' => 'error', 'message' => 'Arquivo de conexão do chat não encontrado.']);
+    exit;
+}
 
 session_start();
 if (isset($_SESSION["adm_id"])) {
@@ -24,9 +31,8 @@ if (isset($_GET["err"]) && $_GET["err"] == 1) {
 // Login code integrated into the same file for simplicity
 // and to avoid multiple file inclusions
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $DocFolder = $_SERVER['DOCUMENT_ROOT'];
     require_once $DocFolder . "/databases/mainDbConn.php";
-    
+
     try {
         $dbConn = new AuthDatabaseConnection();
         $db     = $dbConn->getConnection();
@@ -46,6 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["adm_email"]         = $adm["email"];
             $_SESSION["adm_created_at"]    = $adm["created_at"];
             $_SESSION["adm_avatar"]        = $adm["avatarpath"];
+            $_SESSION["adm"]               = true;;
             header("Location: /admin/dash"); // Redireciona para o painel de admin após login
             exit();
         } else {

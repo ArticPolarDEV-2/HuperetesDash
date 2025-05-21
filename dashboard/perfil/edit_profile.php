@@ -8,7 +8,14 @@ session_start();
 
 // Conectar ao banco de dados MySQL
 $DocFolder = $_SERVER["DOCUMENT_ROOT"];
-require_once $DocFolder . "/databases/database_connection_auth.php";
+
+if (!file_exists($DocFolder . "/databases/mainDbConn.php")) {
+    ob_clean();
+    echo json_encode(['status' => 'error', 'message' => 'Arquivo de conexão não encontrado.']);
+    exit;
+}
+
+require_once $DocFolder . "/databases/mainDbConn.php";
 
 // Verificar se o usuário está logado
 if (!isset($_SESSION["user_id"])) {

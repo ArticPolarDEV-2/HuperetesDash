@@ -18,23 +18,14 @@ if (!isset($_SESSION["user_id"]) && !isset($_SESSION["adm_id"])) {
 
 $DocFolder = $_SERVER['DOCUMENT_ROOT'];
 
-if (!file_exists($DocFolder . "/dashboard/dbconn/database_connection_chat.php")) {
+if (!file_exists($DocFolder . "/databases/mainDbConn.php")) {
     ob_clean();
-    echo json_encode(['status' => 'error', 'message' => 'Arquivo de conexão do chat não encontrado.']);
-    exit;
-}
-
-if (!file_exists($DocFolder . "/databases/database_connection_auth.php")) {
-    ob_clean();
-    echo json_encode(['status' => 'error', 'message' => 'Arquivo de conexão do auth não encontrado.']);
+    echo json_encode(['status' => 'error', 'message' => 'Arquivo de conexão não encontrado.']);
     exit;
 }
 
 // Inclui a conexão com o banco de dados de login
-require_once $DocFolder . "/databases/database_connection_auth.php";
-
-// Inclui a conexão com o banco de dados de mensagens
-require_once $DocFolder . "/dashboard/dbconn/database_connection_chat.php";
+require_once $DocFolder . "/databases/mainDbConn.php";
 
 try {
     // Conecta ao banco de dados de mensagens (chat)

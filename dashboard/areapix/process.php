@@ -14,6 +14,12 @@ if (!isset($_SESSION["user_id"])) {
     exit();
 }
 
+if (!file_exists($_SERVER['DOCUMENT_ROOT'] . "/databases/mainDbConn.php")) {
+    ob_clean();
+    echo json_encode(['status' => 'error', 'message' => 'Arquivo de conexão não encontrado.']);
+    exit;
+}
+
 // Incluir arquivo de conexão com o banco de dados
 include_once($_SERVER['DOCUMENT_ROOT'] . '/databases/mainDbConn.php');
 

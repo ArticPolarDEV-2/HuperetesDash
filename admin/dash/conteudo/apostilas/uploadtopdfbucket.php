@@ -17,14 +17,20 @@ if (!isset($_SESSION["adm_id"])) {
     exit();
 }
 
-// Document root of server
 $DocFolder = $_SERVER['DOCUMENT_ROOT'];
-
-// Include main database connection
+if (!file_exists($DocFolder . "/databases/mainDbConn.php")) {
+    ob_clean();
+    echo json_encode(['status' => 'error', 'message' => 'Arquivo de conexão não encontrado.']);
+    exit;
+}
 require_once $DocFolder . "/databases/mainDbConn.php";
 
-// AWS SDK Autoloader
-require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
+if (!file_exists($DocFolder . "/vendor/autoload.php")) {
+    ob_clean();
+    echo json_encode(['status' => 'error', 'message' => 'Arquivo Autoload do Composer não encontrado.']);
+    exit;
+}
+require $DocFolder . '/vendor/autoload.php';
 
 use Aws\S3\S3Client;
 use Aws\Exception\AwsException;

@@ -21,12 +21,12 @@ if (!isset($_SESSION["user_id"]) && !isset($_SESSION["adm_id"])) {
 
 $DocFolder = $_SERVER['DOCUMENT_ROOT'];
 
-if (!file_exists($DocFolder . "/dashboard/dbconn/database_connection_chat.php")) {
+if (!file_exists($DocFolder . "/databases/mainDbConn.php")) {
     ob_clean();
     echo json_encode(['status' => 'error', 'message' => 'Arquivo de conexão não encontrado.']);
     exit;
 }
-require_once $DocFolder . "/dashboard/dbconn/database_connection_chat.php";
+require_once $DocFolder . "/databases/mainDbConn.php";
 
 // Verifica se a mensagem foi enviada via POST
 if (isset($_POST['mensagem']) && !empty($_POST['mensagem'])) {

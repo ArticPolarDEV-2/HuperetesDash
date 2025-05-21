@@ -21,6 +21,12 @@ if (!isset($_SESSION["adm_id"])) {
 // Document root
 $DocFolder = $_SERVER['DOCUMENT_ROOT'];
 
+if (!file_exists($DocFolder . "/databases/mainDbConn.php")) {
+    ob_clean();
+    echo json_encode(['status' => 'error', 'message' => 'Arquivo de conexão não encontrado.']);
+    exit;
+}
+
 // DB connection
 require_once $DocFolder . "/databases/mainDbConn.php";
 

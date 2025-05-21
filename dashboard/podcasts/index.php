@@ -1,4 +1,9 @@
 <?php
+/* 
+    CODIGO FEITO POR ARTICPOLARDEV.
+    CODIGO LICENÇA MIT - RESPEITE A LICENÇA!
+*/
+
 session_start();
 if (!isset($_SESSION["user_id"]) && !isset($_SESSION["adm_id"])) {
     header("Location: /auth/login"); // Redireciona se nenhum dos dois estiver definido
@@ -19,7 +24,13 @@ if ($_SESSION["adm"]) {
 
 $DocFolder = $_SERVER['DOCUMENT_ROOT'];
 
-require_once $DocFolder . "/dashboard/dbconn/database_connection_data.php";
+if (!file_exists($DocFolder . "/databases/mainDbConn.php")) {
+    ob_clean();
+    echo json_encode(['status' => 'error', 'message' => 'Arquivo de conexão não encontrado.']);
+    exit;
+}
+
+require_once $DocFolder . "/databases/mainDbConn.php";
 
 try {
     $dbconn = new DataDatabaseConnection();

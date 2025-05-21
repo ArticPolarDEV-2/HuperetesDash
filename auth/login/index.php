@@ -10,6 +10,14 @@ if (isset($_SESSION["user_id"])) {
     exit;
 }
 
+$DocFolder = $_SERVER['DOCUMENT_ROOT'];
+if (!file_exists($DocFolder . "/databases/mainDbConn.php")) {
+    ob_clean();
+    echo json_encode(['status' => 'error', 'message' => 'Arquivo de conexão não encontrado.']);
+    exit;
+}
+require_once $DocFolder . "/databases/mainDbConn.php";
+
 $err = "";
 if (isset($_GET["err"]) && $_GET["err"] == 1) {
     $err = '<div class="error"><p class="errmsg">E-Mail ou Senha incorretos!</p></div>';
@@ -17,7 +25,6 @@ if (isset($_GET["err"]) && $_GET["err"] == 1) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
-        $DocFolder = $_SERVER['DOCUMENT_ROOT'];
         require_once $DocFolder . "/databases/mainDbConn.php";
     
         $dbConn = new AuthDatabaseConnection();

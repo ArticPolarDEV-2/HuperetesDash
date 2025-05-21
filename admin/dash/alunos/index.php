@@ -11,6 +11,11 @@ error_reporting(E_ALL);
 
 session_start();
 $DocFolder = $_SERVER['DOCUMENT_ROOT'];
+if (!file_exists($DocFolder . "/databases/mainDbConn.php")) {
+    ob_clean();
+    echo json_encode(['status' => 'error', 'message' => 'Arquivo de conexão não encontrado.']);
+    exit;
+}
 require_once $DocFolder . "/databases/mainDbConn.php";
 
 if (!isset($_SESSION["adm_id"])) {

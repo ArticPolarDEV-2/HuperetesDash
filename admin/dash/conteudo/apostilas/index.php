@@ -33,7 +33,7 @@ if (isset($_GET['msg'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel dos Administradores</title>
+    <title>Gerenciador de Apostilas | Painel dos Administradores</title>
     <link rel="stylesheet" href="/dashboard/css/dashboard.css">
     <link rel="stylesheet" href="/css/root.css">
     <link rel="stylesheet" href="/css/fontawesome.all.css">
@@ -50,7 +50,7 @@ if (isset($_GET['msg'])) {
         <center>
             <a href="/admin/dash" class="dashreturn">
                 <img src="/assets/logo.png" alt="Huperetes Logo" class="logo">
-                <h2>Gerenciador de Apostilas | Painel dos Administradores</h2>
+                <h2>Painel dos Administradores</h2>
             </a>
         </center>
         <ul>
