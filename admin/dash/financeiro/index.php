@@ -69,6 +69,7 @@ $transactions = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="/css/root.css">
     <link rel="stylesheet" href="/dashboard/css/areapix.css">
     <link rel="stylesheet" href="/admin/dash/css/financeiro.css">
+    <link rel="stylesheet" href="/css/fontawesome.all.css">
     <style>
         
     </style>
@@ -181,19 +182,7 @@ $transactions = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 
-    <script>
-        function showReceipt(imageName) {
-            document.getElementById('receiptContainer').innerHTML = 
-                `<img src="/uploads/receipts/${imageName}" style="max-width:100%;">`;
-            document.getElementById('receiptModal').style.display = 'block';
-        }
-        
-        // Fechar modal ao clicar fora
-        window.onclick = function(event) {
-            if (event.target == document.getElementById('receiptModal')) {
-                document.getElementById('receiptModal').style.display = "none";
-            }
-        }
-    </script>
+    <script src="/libs/modallib.js"></script>
+    <script src="/libs/sidebar.js"></script>
 </body>
 </html>

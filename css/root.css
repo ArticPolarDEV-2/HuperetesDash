@@ -17,3 +17,9 @@
 body, html {
     background-color: var(--main-bg);
 }
+
+body {
+    display: flex;
+    min-height: 100vh;
+    color: var(--main-text-color-golden);
+}
